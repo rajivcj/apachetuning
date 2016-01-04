@@ -1,0 +1,24 @@
+A script to calculate the maxclients that has to be set for apache in your server.
+ 
+ To obtain the optimum maxclients value, we need to check the memory used by apache over a period of 24hr. That is just what this script does.
+
+This script is split up into 4 sections.
+  setcron
+  calculate
+  optimeze
+  removecron
+
+Usage
+
+Make the script executable and execute it.
+
+What happens
+
+When it is executed the first time, setcron() is invoked which sets cron to run calculate() every 10 min, optimeze() after 23 hrs and removecron() after 24 hours.
+When calculate() runs every 10 min, it calculates the memory used my httpd and writes it to a file '/apachetunig/result.txt'. The dir apachetunig is created when the script is first run.
+When optimeze() runs after 23 hours, it will take the values from /apachetunig/result.txt and calculate the average memory used by httpd and also calculate the maxclients value and store it into a file '/apachetunig/maxclient.txt'.
+Then removecron() restores the cron file '/var/spool/cron/root' with '/var/spool/cron/root-preedit' which was taken when the script was first run.
+
+NB: memory used by other processes is set as 512MB. It is hardwired into the script. Feel free to change it to what you need.
+
+Hope you find it useful. :)
