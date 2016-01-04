@@ -20,5 +20,5 @@ When optimeze() runs after 23 hours, it will take the values from /apachetunig/r
 Then removecron() restores the cron file '/var/spool/cron/root' with '/var/spool/cron/root-preedit' which was taken when the script was first run.
 
 NB: memory used by other processes is set as 512MB. It is hardwired into the script. Feel free to change it to what you need.
-
+NB: Do not add any cron jobs for root during this 24hr gap as it will be lost.
 Hope you find it useful. :)
