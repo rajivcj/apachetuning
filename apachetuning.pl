@@ -86,9 +86,9 @@ else
   }
     
 open (CRON,'>>',"/var/spool/cron/root") || die "Error opening roots cron file";
- print CRON "*/10 * * * * perl $pwd/apachetuning-new.pl -c\n";
- print CRON "00 $cr3 * * * perl $pwd/apachetuning-new.pl -o\n";
- print CRON "05 $cr3 * * * perl $pwd/apachetuning-new.pl -r\n";    
+ print CRON "*/10 * * * * perl $pwd/apachetuning.pl -c\n";
+ print CRON "00 $cr3 * * * perl $pwd/apachetuning.pl -o\n";
+ print CRON "05 $cr3 * * * perl $pwd/apachetuning.pl -r\n";    
 `touch /apachetunig/cron.lock`;
 }
 
