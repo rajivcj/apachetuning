@@ -21,4 +21,5 @@ Then removecron() restores the cron file '/var/spool/cron/root' with '/var/spool
 
 NB: memory used by other processes is set as 512MB. It is hardwired into the script. Feel free to change it to what you need.
 NB: Do not add any cron jobs for root during this 24hr gap as it will be lost.
+NB: This only works in centos/redhat and other rpm based systems. Does not work in Debian/ubuntu
 Hope you find it useful. :)

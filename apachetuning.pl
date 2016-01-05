@@ -2,7 +2,7 @@
 #Author: Rajiv C.J.
 #Contact: rajivcj12@gmail.com
 #Distributed under GPL v3
-
+#Readme first
 my $pwd = `pwd`;
 if ( $ARGV[0] eq "-c" )
 {
